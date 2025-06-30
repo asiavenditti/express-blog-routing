@@ -1,18 +1,19 @@
 
 const express = require('express')
 const router = express.Router()
+const posts = require('../bonus/posts')
 
 
 
 // index [get]
 router.get('/', (req, res) => {
-    res.send('Lista dei post')
+    res.json(posts)
 
 })
 // show [get]
 router.get('/:id', (req, res) => {
     const id = req.params.id
-    res.send(`Dettaglio del post con id: ${id}`)
+    res.json(`Dettaglio del con id: ${id}`)
 })
 
 // store [post]
@@ -44,3 +45,5 @@ router.delete('/:id', (req, res) => {
 })
 
 module.exports = router
+
+
